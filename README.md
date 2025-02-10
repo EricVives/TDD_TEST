@@ -2,23 +2,39 @@
 
 ## About The Project
 
-Este es un proyecto básico para practicar el desarrollo orientado por testing. Se realizarán dos endpoints:.
-- GET / : endpoint que recibe por parametros un id.
-    En caso de no recibir id retornará un status 400 y un text '404 Not Found'.
-    En caso de recibil el id retornará un status 200 y un text 'Hello World!'.
+Este es un proyecto básico para practicar el desarrollo orientado por testing. Se realizarán dos endpoints:
 
-- POST /user : recibe por parametros un name y un pwd.
-    En caso de no recibir name o pwd retornará un status 400 y un text '400 Bad Request'.
-    En caso de no cumplir la validacion de validPwd retornaráun status 400 y un text '400 invalid pwd'.
-    En caso de cumplir los requisitos retornará un status 200 y un text '200 OK'.
+### Endpoints
 
-- Funcion validPwd
-  Debe retornar false si no cumple alguno de los siguientes requisitos:
-    - Cadena mayor o igual a 6 caracteres.
-    - Tiene mínimo un número.
-    - Tiene mínimo una letra.
-    - Tiene mínimo un carácter especial
+- **GET /** : endpoint que recibe por parámetros un `id`.
+  - Si no recibe `id`, retornará un status `404` y un texto `'404 Not Found'`.
+  - Si recibe `id`, retornará un status `200` y un texto `'Hello World!'`.
+
+- **POST /user** : recibe por parámetros un `name` y un `pwd`.
+  - Si no recibe `name` o `pwd`, retornará un status `400` y un texto `'400 Bad Request'`.
+  - Si no cumple con la validación de `validarPwd`, retornará un status `400` y un texto `'400 invalid pwd'`.
+  - Si cumple con todos los requisitos, retornará un status `200` y un texto `'200 OK'`.
+
+### Función `validarPwd`
+La función `validarPwd` verifica si la contraseña cumple con los siguientes requisitos:
+- Debe tener **al menos 6 caracteres**.
+- Debe contener **mínimo un número**.
+- Debe contener **mínimo una letra**.
+- Debe contener **mínimo un carácter especial**.
+
+Si no cumple con alguno de estos requisitos, retornará `false`.
 
 ## Getting Started
-Iniciar - npm run start
-Testear y ver coverage - npm run test
+
+### Requisitos previos
+
+1. Tener instalado [Node.js](https://nodejs.org/) en tu sistema.
+2. Tener configurado un entorno de desarrollo para ejecutar las pruebas y el servidor. (JEST y SUPERTEST)
+
+### Instrucciones
+
+1. **Iniciar el servidor**  
+   Ejecuta el siguiente comando para iniciar la aplicación:
+   ```bash
+   npm run start
+   npm run test
